@@ -22,7 +22,7 @@ services:
     volumes:
       - db:/var/lib/mysql
 
-  php:
+  symfony:
     build:
       context: .
       dockerfile: Dockerfile

@@ -80,15 +80,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 ENV COMPOSER_ALLOW_SUPERUSER=1
 ENV PATH="${PATH}:/root/.composer/vendor/bin"
 
-#RUN composer create-project symfony/skeleton . --stability=stable --prefer-dist --no-dev --no-progress --no-interaction
-#RUN composer clear-cache
-#RUN composer install --prefer-dist --no-dev --no-progress --no-scripts --no-interaction
-#RUN composer dump-autoload --classmap-authoritative --no-dev
-#RUN composer symfony:dump-env prod
-#RUN composer run-script --no-dev post-install-cmd
-#RUN chmod +x bin/console; sync
-#RUN composer require symfony/mercure-bundle --ignore-platform-reqs
-
 USER $user
 
 WORKDIR /var/www/html/marmalade
