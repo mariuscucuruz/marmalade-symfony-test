@@ -1,6 +1,7 @@
 index:
     path: /
     controller: App\Controller\DefaultController::index
+
 marmalade:
     path: marmalade/
     controller: App\Controller\MarmaladeController::resolveRegistrationFromRequest
