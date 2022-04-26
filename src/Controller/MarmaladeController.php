@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Service\RegistrationService;
+use App\Services\RegistrationService;
 use PHPUnit\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Request;
 class MarmaladeController extends AbstractController
 {
     /**
-     * @var \App\Service\RegistrationService
+     * @var \App\Services\RegistrationService
      */
     private RegistrationService $service;
 
     /**
-     * @param \App\Service\RegistrationService $regService
+     * @param \App\Services\RegistrationService $regService
      */
     public function __construct(RegistrationService $regService)
     {
@@ -32,7 +32,7 @@ class MarmaladeController extends AbstractController
     {
         try {
             $resolveRequest = $this->service->resolve($request->toArray());
-        } catch (Exception $exception) {
+        } catch (Exception) {
             $resolveRequest = ['failed'];
         }
 
