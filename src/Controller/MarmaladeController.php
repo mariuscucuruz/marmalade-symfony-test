@@ -31,7 +31,7 @@ class MarmaladeController extends AbstractController
     public function resolveRegistrationFromRequest(Request $request): JsonResponse
     {
         try {
-            $resolveRequest = $this->service->resolve($request->toArray());
+            $resolveRequest = $this->service->resolvePremiums($request->toArray());
         } catch (Exception) {
             $resolveRequest = ['failed'];
         }
