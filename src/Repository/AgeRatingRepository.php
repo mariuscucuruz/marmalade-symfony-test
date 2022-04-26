@@ -21,27 +21,5 @@ class AgeRatingRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, AgeRating::class);
-        $repository = $registry->getRepository(AgeRating::class);
     }
-
-    public function getForAge(int $age): array
-    {
-        /** @var \Illuminate\Database\Eloquent\Model $ageFactor */
-        $ageFactor = $this->createQueryBuilder->where('age', $age)->firstOrFail();
-
-        return $ageFactor->toArray();
-    }
-
-
-    /*
-    public function findOneBySomeField($value): ?AgeRating
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
